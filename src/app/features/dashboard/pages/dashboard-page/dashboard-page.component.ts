@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CounterStore } from '../../data-access/counter.store';
+import { CounterService } from '../../data-access/counter.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -11,4 +12,11 @@ import { CounterStore } from '../../data-access/counter.store';
 })
 export class DashboardPageComponent {
   readonly store = inject(CounterStore);
+  private readonly counterService = inject(CounterService);
+
+  async testSupabase() {
+    const updatedCounter = await this.counterService.incrementCounter();
+
+    console.log('After:', updatedCounter);
+  }
 }
