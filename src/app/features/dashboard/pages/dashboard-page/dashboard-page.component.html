@@ -1,7 +1,15 @@
 <p>dashboard-page works!</p>
 <p>{{ store.count() }}</p>
 
-<button (click)="store.increment()">Increment</button>
+<button
+  class="rounded bg-black px-4 py-2 text-white"
+  (click)="store.increment()"
+>
+  Increment
+</button>
 <button class="rounded bg-black px-4 py-2 text-white" (click)="testSupabase()">
   Test Supabase
+</button>
+<button class="rounded bg-black px-4 py-2 text-white" (click)="testAuth()">
+  Test Auth
 </button>
